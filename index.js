@@ -17,7 +17,7 @@ const convert = (items) =>
     };
   }, {});
 
-export const snakeToCamel = (items) => {
+const snakeToCamel = (items) => {
   if (typeof items !== "object") {
     throw new Error("The parameter must be an object or an array!");
   }
@@ -27,3 +27,5 @@ export const snakeToCamel = (items) => {
     return convert(items);
   }
 };
+
+module.export = { snakeToCamel };
