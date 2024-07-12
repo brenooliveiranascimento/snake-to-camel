@@ -28,4 +28,4 @@ const snakeToCamel = (items) => {
   }
 };
 
-module.export = { snakeToCamel };
+module.exports = { snakeToCamel };
