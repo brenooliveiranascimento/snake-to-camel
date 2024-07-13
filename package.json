@@ -1,12 +1,12 @@
 {
   "name": "snake-to-camel-case",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --declaration",
-    "dev": "nodemon --watch \"./\" --exec \"ts-node index.ts\" -e ts"
+    "dev": "nodemon --watch \"src//\" --exec \"ts-node src/index.ts\" -e ts"
   },
   "keywords": [
     "Camel case",
