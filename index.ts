@@ -11,7 +11,7 @@ export const formateKeyToSnake = (camelStr: string): string => {
   return camelStr.replace(/[A-Z]/g, (match) => "_" + match.toLowerCase());
 };
 
-export const convertObject = (
+const convertObject = (
   items: object,
   converter: (param: string) => string
 ): object => {
@@ -31,7 +31,7 @@ export const convertObject = (
   }, {});
 };
 
-export const convert = (
+const convert = (
   items: object | object[],
   converter: (param: string) => string
 ): object | object[] => {
