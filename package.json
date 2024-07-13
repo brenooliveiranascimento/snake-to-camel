@@ -1,8 +1,9 @@
 {
   "name": "snake-to-camel-case",
-  "version": "1.4.5",
+  "version": "1.4.7",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --declaration",
     "dev": "nodemon --watch \"src//\" --exec \"ts-node index.ts\" -e ts"
