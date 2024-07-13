@@ -1,4 +1,7 @@
 export const formatKeyToCamel = (snakeStr: string) => {
+  if (!snakeStr.includes("_")) {
+    return snakeStr;
+  }
   return snakeStr.toLowerCase().replace(/(_\w)/g, (match) => {
     return match[1].toUpperCase();
   });
@@ -8,7 +11,7 @@ export const formateKeyToSnake = (camelStr: string): string => {
   return camelStr.replace(/[A-Z]/g, (match) => "_" + match.toLowerCase());
 };
 
-export const convert = (
+export const convertObject = (
   items: object,
   converter: (param: string) => string
 ): object => {
@@ -28,24 +31,23 @@ export const convert = (
   }, {});
 };
 
-export const snakeToCamel = (items: object): object | object[] => {
-  if (typeof items !== "object") {
-    throw new Error("The parameter must be an object or an array of objects!");
-  }
+export const convert = (
+  items: object | object[],
+  converter: (param: string) => string
+): object | object[] => {
   if (Array.isArray(items)) {
-    return items.map((item) => convert(item, formatKeyToCamel));
+    return items.map((item) => convertObject(item, converter));
+  } else if (typeof items === "object") {
+    return convertObject(items, converter);
   } else {
-    return convert(items, formatKeyToCamel);
+    throw new Error("Parameter must be an object or an array of objects!");
   }
 };
 
-export const camelToSnake = (items: object): object | object[] => {
-  if (typeof items !== "object") {
-    throw new Error("The parameter must be an object or an array of objects!");
-  }
-  if (Array.isArray(items)) {
-    return items.map((item) => convert(item, formateKeyToSnake));
-  } else {
-    return convert(items, formateKeyToSnake);
-  }
+export const snakeToCamel = (items: object | object[]): object | object[] => {
+  return convert(items, formatKeyToCamel);
+};
+
+export const camelToSnake = (items: object | object[]): object | object[] => {
+  return convert(items, formateKeyToSnake);
 };

@@ -1,6 +1,6 @@
 {
   "name": "snake-to-camel-case",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,9 @@
   },
   "keywords": [
     "Camel case",
-    "Snake case"
+    "Snake case",
+    "Javascript",
+    "Typescript"
   ],
   "author": "Allblack",
   "license": "ISC",
