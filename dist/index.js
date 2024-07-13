@@ -11,8 +11,11 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.camelToSnake = exports.snakeToCamel = exports.convert = exports.formateKeyToSnake = exports.formatKeyToCamel = void 0;
+exports.camelToSnake = exports.snakeToCamel = exports.formateKeyToSnake = exports.formatKeyToCamel = void 0;
 exports.formatKeyToCamel = function (snakeStr) {
+    if (!snakeStr.includes("_")) {
+        return snakeStr;
+    }
     return snakeStr.toLowerCase().replace(/(_\w)/g, function (match) {
         return match[1].toUpperCase();
     });
@@ -20,40 +23,35 @@ exports.formatKeyToCamel = function (snakeStr) {
 exports.formateKeyToSnake = function (camelStr) {
     return camelStr.replace(/[A-Z]/g, function (match) { return "_" + match.toLowerCase(); });
 };
-exports.convert = function (items, converter) {
-    return Object.entries(items).reduce(function (acc, _a) {
+var convertObject = function (originalObject, converter) {
+    return Object.entries(originalObject).reduce(function (acc, _a) {
         var _b;
         var key = _a[0], value = _a[1];
         return __assign(__assign({}, acc), (_b = {}, _b[converter(key)] = Array.isArray(value)
             ? value.map(function (currValue) {
                 return typeof currValue === "object"
-                    ? exports.convert(currValue, converter)
+                    ? convert(currValue, converter)
                     : currValue;
             })
             : typeof value === "object"
-                ? exports.convert(value, converter)
+                ? convert(value, converter)
                 : value, _b));
     }, {});
 };
-exports.snakeToCamel = function (items) {
-    if (typeof items !== "object") {
-        throw new Error("The parameter must be an object or an array of objects!");
-    }
+var convert = function (items, converter) {
     if (Array.isArray(items)) {
-        return items.map(function (item) { return exports.convert(item, exports.formatKeyToCamel); });
+        return items.map(function (item) { return convertObject(item, converter); });
+    }
+    else if (typeof items === "object") {
+        return convertObject(items, converter);
     }
     else {
-        return exports.convert(items, exports.formatKeyToCamel);
+        throw new Error("Parameter must be an object or an array of objects!");
     }
 };
+exports.snakeToCamel = function (items) {
+    return convert(items, exports.formatKeyToCamel);
+};
 exports.camelToSnake = function (items) {
-    if (typeof items !== "object") {
-        throw new Error("The parameter must be an object or an array of objects!");
-    }
-    if (Array.isArray(items)) {
-        return items.map(function (item) { return exports.convert(item, exports.formateKeyToSnake); });
-    }
-    else {
-        return exports.convert(items, exports.formateKeyToSnake);
-    }
+    return convert(items, exports.formateKeyToSnake);
 };
