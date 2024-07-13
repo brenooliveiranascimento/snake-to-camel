@@ -32,7 +32,7 @@ const convertObject = (
 };
 
 const convert = (
-  items: object | object[],
+  items: any,
   converter: (param: string) => string
 ): object | object[] => {
   if (Array.isArray(items)) {
@@ -44,10 +44,10 @@ const convert = (
   }
 };
 
-export const snakeToCamel = (items: object | object[]): object | object[] => {
+export const snakeToCamel = (items: object | object[]): any | any[] => {
   return convert(items, formatKeyToCamel);
 };
 
-export const camelToSnake = (items: object | object[]): object | object[] => {
+export const camelToSnake = (items: object | object[]): any | any[] => {
   return convert(items, formateKeyToSnake);
 };

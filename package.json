@@ -1,18 +1,19 @@
 {
   "name": "snake-to-camel-case",
-  "version": "1.4.9",
+  "version": "1.5.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --declaration",
-    "dev": "nodemon --watch \"src//\" --exec \"ts-node index.ts\" -e ts"
+    "dev": "nodemon --watch \"./\" --exec \"ts-node index.ts\" -e ts"
   },
   "keywords": [
     "Camel case",
     "Snake case",
     "Javascript",
-    "Typescript"
+    "Typescript",
+    "SnakeCase to CamelCase"
   ],
   "author": "Allblack",
   "license": "ISC",
