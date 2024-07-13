@@ -12,10 +12,10 @@ export const formateKeyToSnake = (camelStr: string): string => {
 };
 
 const convertObject = (
-  items: object,
+  originalObject: object,
   converter: (param: string) => string
 ): object => {
-  return Object.entries(items).reduce((acc, [key, value]) => {
+  return Object.entries(originalObject).reduce((acc, [key, value]) => {
     return {
       ...acc,
       [converter(key)]: Array.isArray(value)

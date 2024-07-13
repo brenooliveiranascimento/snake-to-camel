@@ -1,9 +1,15 @@
-# Feita Para Amantes de Praticidade 🐍 -> 🐫 || 🐫 -> 🐍
+# Feita Para Amantes de Praticidade 🐍 -> 🐫 || 🐍 <- 🐫
 
-Você já teve que lidar com uma API legada ou sem um padrão definido para nomes de chaves? Esta biblioteca veio para resolver seus problemas!
-Também é possível fazer o caminho inverso
+Você já teve que lidar com uma API legado ou sem um padrão definido para nomes de chaves? Esta biblioteca veio para resolver seus problemas!
+Também é possibilitando o caminho inverso!
+
 Os métodos existentes na biblioteca abrangem os niveis internos de um objetos!
-Em suma, todoas as chaves que possuirem os padrões que desejarem converter, serão convertidos.
+Em suma, todoas os objetos e arrays de objetos em niveis internos serão afetados.
+
+```javascript
+npm i snake-to-camel-case
+yarn add snake-to-camel-case
+```
 
 ## Exemplo de Uso
 
