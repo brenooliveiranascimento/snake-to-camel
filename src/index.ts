@@ -18,7 +18,9 @@ const convertObject = (
   return Object.entries(originalObject).reduce((acc, [key, value]) => {
     return {
       ...acc,
-      [converter(key)]: Array.isArray(value)
+      [converter(key)]: !value
+        ? value
+        : Array.isArray(value)
         ? value.map((currValue) =>
             typeof currValue === "object"
               ? convert(currValue, converter)

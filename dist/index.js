@@ -27,15 +27,17 @@ var convertObject = function (originalObject, converter) {
     return Object.entries(originalObject).reduce(function (acc, _a) {
         var _b;
         var key = _a[0], value = _a[1];
-        return __assign(__assign({}, acc), (_b = {}, _b[converter(key)] = Array.isArray(value)
-            ? value.map(function (currValue) {
-                return typeof currValue === "object"
-                    ? convert(currValue, converter)
-                    : currValue;
-            })
-            : typeof value === "object"
-                ? convert(value, converter)
-                : value, _b));
+        return __assign(__assign({}, acc), (_b = {}, _b[converter(key)] = !value
+            ? value
+            : Array.isArray(value)
+                ? value.map(function (currValue) {
+                    return typeof currValue === "object"
+                        ? convert(currValue, converter)
+                        : currValue;
+                })
+                : typeof value === "object"
+                    ? convert(value, converter)
+                    : value, _b));
     }, {});
 };
 var convert = function (items, converter) {
