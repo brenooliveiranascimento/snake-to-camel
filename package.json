@@ -1,6 +1,6 @@
 {
   "name": "snake-to-camel-case",
-  "version": "1.5.8",
+  "version": "1.5.9",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
