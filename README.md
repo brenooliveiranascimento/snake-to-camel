@@ -55,7 +55,7 @@ console.log(stringSnakeCase);
 // Saída: "exemplo_de_string_snake_case"
 ```
 
-## Caminho inverso!
+## Recomendações!
 
 Caso use Typescript, recomendo fortemente que crie um type ou interface ao invocar os métodos `snakeToCamel` e `camelToSnake` EX:
 
