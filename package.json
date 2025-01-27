@@ -1,6 +1,6 @@
 {
   "name": "snake-to-camel-case",
-  "version": "1.5.4",
+  "version": "1.5.6",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,9 +13,11 @@
     "Snake case",
     "Javascript",
     "Typescript",
-    "SnakeCase to CamelCase"
+    "SnakeCase to CamelCase",
+    "Converter snake case",
+    "Converter camel case"
   ],
-  "author": "Allblack",
+  "author": "Breno Nascimento",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^12.12.14",

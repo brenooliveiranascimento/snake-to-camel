@@ -55,6 +55,32 @@ console.log(stringSnakeCase);
 // Saída: "exemplo_de_string_snake_case"
 ```
 
-## ATENÇÂO!!
+## Caminho inverso!
 
-Está em fase de desenvolvimento! Sua tipagem não está dinâmica, então aconselhamos que criem interfaces para o retorno com as novas chaves.
+Caso use Typescript, recomendo fortemente que crie um type ou interface ao invocar os métodos `snakeToCamel` e `camelToSnake` EX:
+
+```typescript
+import { snakeToCamel, formatKeyToCamel } from "snake-to-camel-case";
+
+interface originalRequestData {
+  data_request: string[];
+  per_page: string
+}
+
+const requestData: originalData = {
+    data_request: ["teste 123"];
+    per_page: 1
+   };
+
+interface requestData {
+  dataRequest: string;
+  perPage: number
+}
+
+const resultadoObjeto = snakeToCamel(test) as formatedData;
+console.log(resultadoObjeto);
+// Saída: {
+//   dataRequest: ["teste 123"];
+//   perPage: 1
+//  }
+```
