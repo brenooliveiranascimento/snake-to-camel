@@ -64,17 +64,19 @@ import { snakeToCamel, formatKeyToCamel } from "snake-to-camel-case";
 
 interface originalRequestData {
   data_request: string[];
-  per_page: string
+  per_page: number;
+  page: number;
 }
 
-const requestData: originalData = {
-    data_request: ["teste 123"];
-    per_page: 1
-   };
+const requestData: originalRequestData = {
+  data_request: ["teste"],
+  per_page: 1,
+  page: 1,
+};
 
 interface requestData {
   dataRequest: string;
-  perPage: number
+  perPage: number;
 }
 
 const resultadoObjeto = snakeToCamel(test) as formatedData;
@@ -82,5 +84,6 @@ console.log(resultadoObjeto);
 // Saída: {
 //   dataRequest: ["teste 123"];
 //   perPage: 1
+//   page: 1
 //  }
 ```
