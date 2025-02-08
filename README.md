@@ -75,8 +75,9 @@ const requestData: originalRequestData = {
 };
 
 interface requestData {
-  dataRequest: string;
+  dataRequest: string[];
   perPage: number;
+  page: number;
 }
 
 const resultadoObjeto = snakeToCamel(test) as formatedData;
