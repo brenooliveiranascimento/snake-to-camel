@@ -1,14 +1,14 @@
----
 # 🚀 **snake-to-camel-case** 🐍 ➡️ 🐫 | 🐫 ➡️ 🐍
 
 ## **Feita Para Amantes de Praticidade!**
 
 Lidando com APIs legadas ou inconsistentes? Esta biblioteca foi criada para **normalizar automaticamente** as chaves de objetos e arrays de objetos, convertendo entre **snake_case** e **camelCase** de forma **simples e eficiente**.
 
-💡 **Recursos:**
-✅ Conversão profunda de objetos e arrays de objetos.
-✅ Implementação leve e rápida.
-✅ Perfeito para uma camada de normalização de dados!
+💡 **Recursos:**  
+✅ Conversão profunda de objetos e arrays de objetos. <br>  
+✅ Implementação leve e rápida. <br>  
+✅ Perfeito para uma camada de normalização de dados! <br>
+
 ---
 
 ## 📦 **Instalação**
@@ -27,7 +27,7 @@ yarn add snake-to-camel-case
 
 ---
 
-## ✨ **Como Usar?**
+## **Como Usar?**
 
 ### **🔄 Convertendo de snake_case para camelCase**
 
