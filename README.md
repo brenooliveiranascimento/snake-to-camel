@@ -1,90 +1,99 @@
-# Feita Para Amantes de Praticidade 🐍 -> 🐫 || 🐍 <- 🐫
+---
+# 🚀 **snake-to-camel-case** 🐍 ➡️ 🐫 | 🐫 ➡️ 🐍
 
-Você já teve que lidar com uma API legado ou sem um padrão definido para nomes de chaves? Esta biblioteca veio para resolver seus problemas!
-Também é possibilitando o caminho inverso!
+## **Feita Para Amantes de Praticidade!**
 
-Os métodos existentes na biblioteca abrangem os niveis internos de um objetos!
-Em suma, todoas os objetos e arrays de objetos em niveis internos serão afetados.
+Lidando com APIs legadas ou inconsistentes? Esta biblioteca foi criada para **normalizar automaticamente** as chaves de objetos e arrays de objetos, convertendo entre **snake_case** e **camelCase** de forma **simples e eficiente**.
 
-```javascript
+💡 **Recursos:**
+✅ Conversão profunda de objetos e arrays de objetos.
+✅ Implementação leve e rápida.
+✅ Perfeito para uma camada de normalização de dados!
+---
+
+## 📦 **Instalação**
+
+Com **npm**:
+
+```sh
 npm i snake-to-camel-case
+```
+
+Com **yarn**:
+
+```sh
 yarn add snake-to-camel-case
 ```
 
-## Exemplo de Uso
+---
+
+## ✨ **Como Usar?**
+
+### **🔄 Convertendo de snake_case para camelCase**
 
 ```javascript
 import { snakeToCamel, formatKeyToCamel } from "snake-to-camel-case";
 
-// Exemplo com objeto
-const resultadoObjeto = snakeToCamel({ name_test: "Breno Nascimento" });
-console.log(resultadoObjeto);
+// 🔹 Convertendo um objeto
+const obj = { name_test: "Breno Nascimento" };
+console.log(snakeToCamel(obj));
 // Saída: { nameTest: "Breno Nascimento" }
 
-// Exemplo com array de objetos
-const resultadoArray = snakeToCamel([{ name_test: "Breno Nascimento" }]);
-console.log(resultadoArray);
+// 🔹 Convertendo um array de objetos
+const array = [{ name_test: "Breno Nascimento" }];
+console.log(snakeToCamel(array));
 // Saída: [{ nameTest: "Breno Nascimento" }]
-
-// Exemplo de conversão de string
-const stringSnakeCase = "exemplo_de_string_snake_case";
-const stringCamelCase = formatKeyToCamel(stringSnakeCase);
-console.log(stringCamelCase);
-// Saída: "exemploDeStringSnakeCase"
 ```
 
-## Caminho inverso!
+---
+
+### **🔄 Convertendo de camelCase para snake_case**
 
 ```javascript
-import { camelToSnake, formateKeyToSnake } from "snake-to-camel-case";
+import { camelToSnake, formatKeyToSnake } from "snake-to-camel-case";
 
-// Exemplo com objeto
-const resultadoObjeto = camelToSnake({ nameTest: "Breno Nascimento" });
-console.log(resultadoObjeto);
+// 🔹 Convertendo um objeto
+const obj = { nameTest: "Breno Nascimento" };
+console.log(camelToSnake(obj));
 // Saída: { name_test: "Breno Nascimento" }
 
-// Exemplo com array de objetos
-const resultadoArray = camelToSnake([{ nameTest: "Breno Nascimento" }]);
-console.log(resultadoArray);
+// 🔹 Convertendo um array de objetos
+const array = [{ nameTest: "Breno Nascimento" }];
+console.log(camelToSnake(array));
 // Saída: [{ name_test: "Breno Nascimento" }]
-
-// Exemplo de conversão de string
-const stringCamelCase = "exemploDeStringCamelCase";
-const stringSnakeCase = formateKeyToSnake(stringCamelCase);
-console.log(stringSnakeCase);
-// Saída: "exemplo_de_string_snake_case"
 ```
 
-## Recomendações!
+---
 
-Caso use Typescript, recomendo fortemente que crie um type ou interface ao invocar os métodos `snakeToCamel` e `camelToSnake` EX:
+## 📌 **Recomendações para TypeScript**
+
+Caso esteja usando **TypeScript**, **recomenda-se criar uma interface** para garantir a tipagem correta ao chamar os métodos `snakeToCamel` e `camelToSnake`.
 
 ```typescript
-import { snakeToCamel, formatKeyToCamel } from "snake-to-camel-case";
+import { snakeToCamel } from "snake-to-camel-case";
 
-interface originalRequestData {
+interface OriginalRequestData {
   data_request: string[];
   per_page: number;
   page: number;
 }
 
-const requestData: originalRequestData = {
+const requestData: OriginalRequestData = {
   data_request: ["teste"],
   per_page: 1,
   page: 1,
 };
 
-interface requestData {
+interface FormattedRequestData {
   dataRequest: string[];
   perPage: number;
   page: number;
 }
 
-const resultadoObjeto = snakeToCamel(test) as formatedData;
-console.log(resultadoObjeto);
-// Saída: {
-//   dataRequest: ["teste 123"];
-//   perPage: 1
-//   page: 1
-//  }
+// 🔹 Garantindo a tipagem correta
+const formattedData = snakeToCamel(requestData) as FormattedRequestData;
+console.log(formattedData);
+// Saída: { dataRequest: ["teste"], perPage: 1, page: 1 }
 ```
+
+---

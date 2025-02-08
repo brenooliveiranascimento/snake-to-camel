@@ -1,6 +1,6 @@
 import { objConversor } from "./conversors/objConversor";
 import { isDate } from "./validators/isDate";
-import { formatKeyToCamel, formateKeyToSnake } from "./workers";
+import { formatToCamel, formatToSnake } from "./workers";
 
 export const convert = (
   items: any,
@@ -16,9 +16,9 @@ export const convert = (
 };
 
 export const snakeToCamel = (items: object | object[]): any | any[] => {
-  return convert(items, formatKeyToCamel);
+  return convert(items, formatToCamel);
 };
 
 export const camelToSnake = (items: object | object[]): any | any[] => {
-  return convert(items, formateKeyToSnake);
+  return convert(items, formatToSnake);
 };

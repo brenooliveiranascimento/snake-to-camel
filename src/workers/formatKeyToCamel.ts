@@ -1,4 +1,4 @@
-export const formatKeyToCamel = (snakeStr: string) => {
+export const formatToCamel = (snakeStr: string) => {
   if (!snakeStr.includes("_")) {
     return snakeStr;
   }

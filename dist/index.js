@@ -17,10 +17,10 @@ const convert = (items, converter) => {
 };
 exports.convert = convert;
 const snakeToCamel = (items) => {
-    return (0, exports.convert)(items, workers_1.formatKeyToCamel);
+    return (0, exports.convert)(items, workers_1.formatToCamel);
 };
 exports.snakeToCamel = snakeToCamel;
 const camelToSnake = (items) => {
-    return (0, exports.convert)(items, workers_1.formateKeyToSnake);
+    return (0, exports.convert)(items, workers_1.formatToSnake);
 };
 exports.camelToSnake = camelToSnake;
